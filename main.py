@@ -37,12 +37,17 @@ cercaV(1295)
 #--------------------------------------------------
 #COBRA
 #--------------------------------------------------
+
 def check(controle):
     if win.checkKey() == '':
         return True
     else:
         if win.checkKey() != controle:
             return False
+
+
+
+
 def perde():
     if c >= 1295 or c <= 5:
         return True
@@ -112,7 +117,6 @@ while continuar:
         if win.getMouse():
             bateu = False
 
-
     if tecla == 'w':
         w = True
         while w == True:
@@ -126,8 +130,10 @@ while continuar:
             Cb.setFill('green')
             Cb.setOutline('green')
             Cb.draw(win)
+            win.checkKey()
             w = check('w')
-            time.sleep(0.2)
+            time.sleep(0.1)
+
 
     if tecla == 'a':
         a = True
@@ -143,7 +149,7 @@ while continuar:
             Cb.setOutline('green')
             Cb.draw(win)
             a = check('a')
-            time.sleep(0.2)
+            time.sleep(0.1)
 
     if tecla == 's':
         s = True
@@ -159,7 +165,7 @@ while continuar:
             Cb.setOutline('green')
             Cb.draw(win)
             s = check(s)
-            time.sleep(0.2)
+            time.sleep(0.1)
 
     if tecla == 'd':
         d = True
@@ -175,8 +181,8 @@ while continuar:
             Cb.setOutline('green')
             Cb.draw(win)
             d = check('d')
-            time.sleep(0.2)
+            time.sleep(0.1)
 
-    #print(pts)
+    print(tecla)
 
 
