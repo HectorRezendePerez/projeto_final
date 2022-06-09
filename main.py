@@ -1,17 +1,16 @@
 from graphics import *
 import random
 import time
-
+#--------------------------------------------------
 win=GraphWin('cobrinha..', 1300, 700)
-
 win.setBackground(color_rgb(0, 0, 0))
-
+#--------------------------------------------------
 def line(x1,z1,x2,z2):
     lnex= Line(Point(x1,z1), Point(x2,z2))
     lnex.setFill('black')
     lnex.setWidth(4)
     lnex.draw(win)
-
+#--------------------------------------------------
 def cercaH(x):
     for ind in range(0,1300, 5):
         Ch=Point(ind, x)
@@ -22,13 +21,11 @@ def cercaV(y):
         Cv=Point(y, ind)
         Cv.draw(win)
         Cv.setFill('green')
-
+#--------------------------------------------------
 line(6,0,6,1300)
 line(0,6,1300,6)
 line(1295,0,1295, 700)
 line(0,695,1300,695)
-
-
 cercaH(5)
 cercaH(695)
 cercaV(5)
@@ -44,10 +41,7 @@ def check(controle):
     else:
         if win.checkKey() != controle:
             return False
-
-
-
-
+#--------------------------------------------------
 def perde():
     if c >= 1295 or c <= 5:
         return True
@@ -59,39 +53,32 @@ def perde():
         return True
     else:
         return False
-
-
-
+#--------------------------------------------------
 x = 650
 y = 350
 c = 660
 v = 360
-
-
 Cb = Rectangle(Point(x, y), Point(c, v))
 Cb.setFill('blue')
 Cb.setOutline('yellow')
 Cb.draw(win)
-
-
+#--------------------------------------------------
+pts = 0
 def ponto():
     if x or y == mx or my:
         return True
     else:
         return False
-
-
+#--------------------------------------------------
 def randomnumb(inicio,final,passo):
     return random.randrange(inicio,final,passo)
-
+#--------------------------------------------------
 mx = randomnumb(10,1285,10)
 my = randomnumb(10,685,10)
 Mc = Rectangle(Point(mx, my), Point(mx + 10, my + 10))
 Mc.setFill(color_rgb(255, 0, 0))
 Mc.setOutline(color_rgb(255, 0, 0))
-
-pts = 0
-
+#--------------------------------------------------
 bateu = False
 passo = 5
 continuar = True
@@ -183,5 +170,3 @@ while continuar:
             time.sleep(0.1)
 
     print(tecla)
-
-
