@@ -69,11 +69,37 @@ Cb.setOutline('yellow')
 Cb.draw(win)
 
 
+def ponto():
+    if x or y == mx or my:
+        return True
+    else:
+        return False
+
+
+def randomnumb(inicio,final,passo):
+    return random.randrange(inicio,final,passo)
+
+mx = randomnumb(10,1285,10)
+my = randomnumb(10,685,10)
+Mc = Rectangle(Point(mx, my), Point(mx + 10, my + 10))
+Mc.setFill(color_rgb(255, 0, 0))
+Mc.setOutline('black')
+
+pts = 0
+
 bateu = False
-passo = 2
+passo = 10
 continuar = True
 while continuar:
     tecla = win.checkKey()
+    '''
+    if ponto() == True:
+        pts += 15
+        Mc.undraw()
+        Mc.draw(win)
+    else:
+        break
+    '''
 
     if bateu:
         passo = passo - passo
@@ -100,8 +126,8 @@ while continuar:
             Cb.setFill('blue')
             Cb.setOutline('yellow')
             Cb.draw(win)
-            time.sleep(0.01)
             w = check('w')
+            time.sleep(0.2)
 
     if tecla == 'a':
         a = True
@@ -116,8 +142,8 @@ while continuar:
             Cb.setFill('blue')
             Cb.setOutline('yellow')
             Cb.draw(win)
-            time.sleep(0.01)
             a = check('a')
+            time.sleep(0.2)
 
     if tecla == 's':
         s = True
@@ -132,8 +158,8 @@ while continuar:
             Cb.setFill('blue')
             Cb.setOutline('yellow')
             Cb.draw(win)
-            time.sleep(0.01)
             s = check(s)
+            time.sleep(0.2)
 
     if tecla == 'd':
         d = True
@@ -148,9 +174,9 @@ while continuar:
             Cb.setFill('blue')
             Cb.setOutline('yellow')
             Cb.draw(win)
-            time.sleep(0.01)
             d = check('d')
+            time.sleep(0.2)
 
-
+    #print(pts)
 
 
