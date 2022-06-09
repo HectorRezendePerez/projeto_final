@@ -130,7 +130,6 @@ while continuar:
             Cb.setFill('green')
             Cb.setOutline('green')
             Cb.draw(win)
-            win.checkKey()
             w = check('w')
             time.sleep(0.1)
 
