@@ -4,7 +4,7 @@ import time
 
 win=GraphWin('cobrinha..', 1300, 700)
 
-win.setBackground(color_rgb(136, 163, 0))
+win.setBackground(color_rgb(0, 0, 0))
 
 def line(x1,z1,x2,z2):
     lnex= Line(Point(x1,z1), Point(x2,z2))
@@ -16,12 +16,12 @@ def cercaH(x):
     for ind in range(0,1300, 5):
         Ch=Point(ind, x)
         Ch.draw(win)
-        Ch.setFill('brown')
+        Ch.setFill('green')
 def cercaV(y):
     for ind in range(0,700, 5):
         Cv=Point(y, ind)
         Cv.draw(win)
-        Cv.setFill('brown')
+        Cv.setFill('green')
 
 line(6,0,6,1300)
 line(0,6,1300,6)
@@ -83,12 +83,12 @@ mx = randomnumb(10,1285,10)
 my = randomnumb(10,685,10)
 Mc = Rectangle(Point(mx, my), Point(mx + 10, my + 10))
 Mc.setFill(color_rgb(255, 0, 0))
-Mc.setOutline('black')
+Mc.setOutline(color_rgb(255, 0, 0))
 
 pts = 0
 
 bateu = False
-passo = 10
+passo = 5
 continuar = True
 while continuar:
     tecla = win.checkKey()
@@ -123,8 +123,8 @@ while continuar:
             y -= passo
             v -= passo
             Cb = Rectangle(Point(x, y), Point(c, v))
-            Cb.setFill('blue')
-            Cb.setOutline('yellow')
+            Cb.setFill('green')
+            Cb.setOutline('green')
             Cb.draw(win)
             w = check('w')
             time.sleep(0.2)
@@ -139,8 +139,8 @@ while continuar:
             x -= passo
             c -= passo
             Cb = Rectangle(Point(x, y), Point(c, v))
-            Cb.setFill('blue')
-            Cb.setOutline('yellow')
+            Cb.setFill('green')
+            Cb.setOutline('green')
             Cb.draw(win)
             a = check('a')
             time.sleep(0.2)
@@ -155,8 +155,8 @@ while continuar:
             y += passo
             v += passo
             Cb = Rectangle(Point(x, y), Point(c, v))
-            Cb.setFill('blue')
-            Cb.setOutline('yellow')
+            Cb.setFill('green')
+            Cb.setOutline('green')
             Cb.draw(win)
             s = check(s)
             time.sleep(0.2)
@@ -171,8 +171,8 @@ while continuar:
             x += passo
             c += passo
             Cb = Rectangle(Point(x, y), Point(c, v))
-            Cb.setFill('blue')
-            Cb.setOutline('yellow')
+            Cb.setFill('green')
+            Cb.setOutline('green')
             Cb.draw(win)
             d = check('d')
             time.sleep(0.2)
